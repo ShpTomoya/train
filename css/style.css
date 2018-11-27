@@ -1,0 +1,384 @@
+@charset "UTF-8";
+
+/* base */
+body {
+	font-family: 'Lato', "YuGothic", Meriryo, sans-serif;
+	color: #333;
+	background-color: #FFF;
+	margin: 0;
+}
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+a, a:link, a:visited, a:hover, a:active {
+	text-decoration: none;
+	/* color: #333; */
+}
+a {
+	color: #333;
+}
+a:hover {
+    opacity: 0.6;
+}
+h1, h2, h3, p {
+	margin: 0;
+}
+
+/* structure */
+.flex {
+	display: flex;
+	justify-content: space-between;
+}
+.clearfix::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+.text-center {
+	text-align: center;
+}
+
+/* parts */
+.contentWrapper {
+	width: 80%;
+	max-width: 980px;
+	margin: 0 auto;
+}
+.btn {
+	width: 120px;
+	display: inline-block;
+	text-align: center;
+	border: 1.5px solid;
+	font-weight: bold;
+	letter-spacing: 1.5px;
+	font-size: 18px;
+  line-height: 1.5;
+}
+
+/* header */
+header {
+	width: 100%;
+	padding: 12% 0 18%;
+	background-image: url('../img/top.png');
+	background-size: cover;
+	color: #FFF;
+}
+.header-title {
+	font-size: 70px;
+	letter-spacing: 1.5px;
+	text-shadow: 0 0 5px rgba(0, 0, 0, 1);
+}
+.btn-header {
+	color: #FFF;
+	margin-top: 30px;
+}
+
+/* section1 */
+.section1 {
+	position: relative;
+	width: 100%;
+	padding-top: 8%;
+}
+.section1-heading {
+	display: block;
+	width: 50%;
+	font-size: 38px;
+	letter-spacing: 1.5px;
+	border-bottom: 2px solid;
+}
+.section1-textBox {
+	float: right;
+	width: 35%;
+	font-size: 14px;
+}
+.section1-text {
+	margin-bottom: 20px;
+}
+.btn-section1 {
+	margin: 20px 0;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+.section1 img {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 55%;
+	height: auto;
+}
+
+/* section2 */
+.section2 {
+	width: 100%;
+	padding: 10% 0;
+}
+.section2-content {
+	width: 48%;
+}
+.section2-content:nth-of-type(1) {
+	background-image: url('../img/s-2.png');
+}
+.section2-content:nth-of-type(2) {
+	background-image: url('../img/s-3.png');
+}
+.section2-textBox {
+	margin: 10% 22%;
+	padding: 20px 20px 60px;
+	background-color: rgba(255, 255, 255, 0.8);
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+.section2-icon {
+		display: inline-block;
+}
+.section2-heading {
+	position: relative;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	font-size: 20px;
+	letter-spacing: 1.5px;
+}
+.section2-heading::after {
+  content: '';
+  position: absolute;
+  right: 40%;
+  bottom: 0;
+  left: 40%;
+  border-bottom: 3px solid;
+}
+
+/* section3 */
+.section3 {
+	width: 100%;
+	padding: 8% 0;
+	background-image: url('../img/s-4.png');
+	background-size: cover;
+	color: #FFF;
+}
+.section3-contents {
+	width: 90%;
+	margin: 0 auto;
+}
+.section3-heading {
+	font-size: 26px;
+	margin: 20px 0 50px;
+}
+.section3-text {
+	font-size: 16px;
+	line-height: 2;
+	text-shadow: 0 0 5px rgba(0, 0, 0, 1);
+	text-align: justify;
+	padding-right: 50px;
+	margin-bottom: 50px;
+}
+
+/* section4 */
+.section4 {
+	width: 100%;
+}
+.section4-content {
+	position: relative;
+}
+.section4-textBox {
+	padding: 5% 38% 5% 7%;
+	margin-top: 15%;
+	color: #FFF;
+	background-color: rgba(1, 59, 116, 1);
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+.section4-content:nth-of-type(2) .section4-textBox {
+	padding: 5% 7% 5% 38%;
+}
+.section4-textBox p {
+	margin-bottom: 40px;
+	line-height: 1.7;
+}
+.btn-section4 {
+	color: #FFF;
+}
+.section4-content img {
+	width: 40%;
+	height: auto;
+	position: absolute;
+	top: -20%;
+	right: 0;
+}
+.section4-content:nth-of-type(2) img {
+	right: auto;
+	left: 0;
+}
+
+/* section5 */
+.section5 {
+	width: 100%;
+	padding: 10% 0;
+}
+.section5-content {
+	position: relative;
+	width: 32.5%;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+.section5-content img {
+	width: 100%;
+	height: auto;
+}
+.section5-textBox {
+	padding: 5px 10px 80px 10px;
+}
+.section5-heading {
+	position: relative;
+	margin-bottom: 10px;
+	font-size: 15px;
+}
+.section5-heading::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-bottom: 2px solid #013B74;
+}
+.section5-text {
+	line-height: 1.6;
+	font-size: 14px;
+}
+.btn-section5 {
+	position: absolute;
+	bottom: 3%;
+	left: 25%;
+	width: 50%;
+	color: #013B74;
+}
+
+/* footer */
+footer {
+	width: 100%;
+	padding-bottom: 10px;
+	background-color: rgba(95, 94, 94, 1);
+	color: #FFF;
+	font-size: 0;
+}
+footer img {
+	width: 36px;
+	height: auto;
+	margin: 20px;
+}
+.footer-text {
+	font-size: 14px;
+	line-height: 1.7;
+}
+.footer-copyright {
+	margin-top: 20px;
+}
+
+/* タブレット用css */
+@media (max-width: 1000px) {
+	/* parts */
+	.contentWrapper {
+		width: 90%;
+	}
+	/* header */
+	.header-title {
+    font-size: 60px;
+	}
+	/* section1 */
+	.section1-heading {
+		width: 60%;
+		margin: 0 auto 5%;
+	}
+	.section1-textBox {
+		float: none;
+		width: 100%;
+		text-align: center;
+	}
+	.btn-section1 {
+	}
+	.section1 img {
+		display: none;
+	}
+	/* section2 */
+	.section2-textBox {
+    margin: 10% 16%;
+    /* margin: 10% 46px; */
+	}
+	/* section3 */
+	.section3-contents {
+		width: 85%;
+	}
+	.section3-heading {
+		font-size: 22px;
+	}
+	.section3-text {
+		padding-right: 0;
+	}
+	/* section4 */
+	.section4-textBox {
+		padding: 5% 40% 5% 5%;
+	}
+	.section4-content:nth-of-type(2) .section4-textBox {
+		padding: 5% 5% 5% 40%;
+	}
+}
+
+/* スマホ用css */
+@media (max-width: 670px) {
+	/* structure */
+	.flex {
+		display: flex;
+		flex-direction: column;
+	}
+	/* parts */
+	.btn {
+		width: 180px;
+	}
+	/* header */
+	.header-title {
+    font-size: 40px;
+	}
+	/* section1 */
+	.section1-heading {
+		margin-bottom: 10%;
+	}
+	/* section2 */
+	.section2-content {
+		width: 100%;
+	}
+	.section2-content:nth-of-type(1) {
+		margin-bottom: 10%;
+	}
+	/* section3 */
+	.section3-heading {
+		margin: 20px 0 40px;
+	}
+	.section3-text {
+		margin-bottom: 30px;
+	}
+	/* section4 */
+	.section4-textBox {
+		margin-top: 180px;
+		padding: 20% 5% 5%;
+	}
+	.section4-content:nth-of-type(2) .section4-textBox {
+		padding: 22% 5% 5%;
+	}
+	.btn-wrapper {
+		text-align: center;
+		padding-bottom: 5px;
+	}
+	.section4-content img {
+		width: 50%;
+		height: auto;
+		position: absolute;
+		top: -30%;
+	}
+	/* section5 */
+	.section5 {
+		padding: 10% 0 5%;
+	}
+	.section5-content {
+		width: 100%;
+		margin-bottom: 10%;
+	}
+	/* footer */
+	.footer-text {
+		padding: 0 5%;
+	}
+}
