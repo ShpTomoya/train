@@ -4,14 +4,14 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Milky Way Train</title>
-		<link rel="stylesheet" href="css/style.css">
-		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
 		<header>
 			<div class="contentWrapper text-center">
 				<h1 class="header-title">The Night<br>of the<br>Milky Way Train</h1>
-				<a href="#" class="btn btn-header">start</a>
+				<a id="start" @click.prevent="sayStart" class="btn btn-header" href="#">start</a>
 			</div>
 		</header>
 		<section class="section1">
@@ -22,7 +22,7 @@
 					<p class="section1-text">先生は、黒板に吊した<br>大きな黒い星座の図の、<br>上から下へ白くけぶった<br>銀河帯のようなところを指さしながら、<br>みんなに問いをかけました。</p>
 					<p class="section1-text">カムパネルラが手をあげました。<br>それから四五人手をあげました。</p>
 					<p class="section1-text">ジョバンニも手をあげようとして、<br>急いでそのままやめました。</p>
-					<a href="#" class="btn btn-section1">more</a>
+					<!-- <a class="btn btn-section1" href="#">more</a> -->
 				</div>
 			</div>
 			<img src="img/s-1.png" alt="">
@@ -59,53 +59,55 @@
 				</div>
 			</div>
 		</section>
-		<section class="section4">
+		<section id="sec4" class="section4">
 			<div class="section4-content">
 				<div class="section4-textBox contentWrapper">
-					<p>先生はしばらく困ったようすでしたが、眼めをカムパネルラの方へ向けて、「ではカムパネルラさん。」と名指しました。するとあんなに元気に手をあげたカムパネルラが、やはりもじもじ立ち上ったままやはり答えができませんでした。</p>
-					<p>先生は意外なようにしばらくじっとカムパネルラを見ていましたが、急いで「では。よし。」と云いながら、自分で星図を指さしました。</p>
-					<div class="btn-wrapper">
-						<a class="btn btn-section4" href="#">more</a>
+					<p class="section4-text">先生はしばらく困ったようすでしたが、眼めをカムパネルラの方へ向けて、「ではカムパネルラさん。」と名指しました。するとあんなに元気に手をあげたカムパネルラが、やはりもじもじ立ち上ったままやはり答えができませんでした。</p>
+					<p class="section4-text">先生は意外なようにしばらくじっとカムパネルラを見ていましたが、急いで「では。よし。」と云いながら、自分で星図を指さしました。</p>
+					<p v-if="moreText1">カムパネルラがそれを知って気の毒がってわざと返事をしなかったのだ、そう考えるとたまらないほど、じぶんもカムパネルラもあわれなような気がするのでした。</p>
+					<div v-if="btnMore1" class="btn-wrapper">
+						<a @click.prevent="showText1" class="btn btn-section4" href="#">more</a>
 					</div>
 				</div>
 				<img src="img/s-5.png" alt="">
 			</div>
 			<div class="section4-content">
 				<div class="section4-textBox contentWrapper">
-					<p>「このぼんやりと白い銀河を大きないい望遠鏡で見ますと、もうたくさんの小さな星に見えるのです。ジョバンニさんそうでしょう。」</p>
-					<p>ジョバンニはまっ赤になってうなずきました。けれどもいつかジョバンニの眼のなかには涙なみだがいっぱいになりました。</p>
-					<div class="btn-wrapper">
-						<a class="btn btn-section4" href="#">more</a>
+					<p class="section4-text">「このぼんやりと白い銀河を大きないい望遠鏡で見ますと、もうたくさんの小さな星に見えるのです。ジョバンニさんそうでしょう。」</p>
+					<p class="section4-text">ジョバンニはまっ赤になってうなずきました。けれどもいつかジョバンニの眼のなかには涙なみだがいっぱいになりました。</p>
+					<p v-if="moreText2">ですからもしもこの天あまの川がわがほんとうに川だと考えるなら、その一つ一つの小さな星はみんなその川のそこの砂や砂利じゃりの粒つぶにもあたるわけです。</p>
+					<div v-if="btnMore2" class="btn-wrapper">
+						<a @click.prevent="showText2" class="btn btn-section4" href="#">more</a>
 					</div>
 				</div>
 				<img src="img/s-6.png" alt="">
 			</div>
 		</section>
-		<section class="section5">
+		<section id="sec5" class="section5">
 			<div class="contentWrapper flex">
 				<div class="section5-content">
 					<img src="img/s-7.png" alt="">
 					<div class="section5-textBox">
 						<h3 class="section5-heading">そうだ僕は知っていたのだ、</h3>
-						<p class="section5-text">もちろんカムパネルラも知っている、それはいつかカムパネルラのお父さんの博士のうちでカムパネルラといっしょに読んだ雑誌のなかにあったのだ。</p>
+						<p class="section5-text">もちろんカムパネルラも知っている、それはいつかカムパネルラのお父さんの博士のうちでカムパネルラといっしょに読んだ雑誌のなかにあったの<span v-if="!moreText1">……</span><span v-if="moreText1">だ。またこれを巨きな乳の流れと考えるならもっと天の川とよく似ています。つまりその星はみな、乳のなかにまるで細かにうかんでいる脂油しゆの球にもあたるのです。</span></p>
 					</div>
-					<a class="btn btn-section5" href="#">more</a>
+					<a @click.prevent="btn1" v-cloak class="btn btn-section5" href="#">{{ btnText1 }}</a>
 				</div>
 				<div class="section5-content">
 					<img src="img/s-8.png" alt="">
 					<div class="section5-textBox">
 						<h3 class="section5-heading">それどころでなくカムパネルラは、</h3>
-						<p class="section5-text">その雑誌を読むと、すぐお父さんの書斎から巨きな本をもってきて、銀河というところをひろげ、まっ黒な頁ページいっぱいに白い点々のある美しい写真を二人でいつまでも見たのでした。</p>
+						<p class="section5-text">その雑誌を読むと、すぐお父さんの書斎から巨きな本をもってきて、銀河というところをひろげ、まっ黒な頁ページいっぱいに白い点々のある美しい写真を二人でいつまでも見たのでし<span v-if="!moreText2">……</span><span v-if="moreText2">た。そんなら何がその川の水にあたるかと云いますと、それは真空という光をある速さで伝えるもので、太陽や地球もやっぱりそのなかに浮うかんでいるのです。</span></p>
 					</div>
-					<a class="btn btn-section5" href="#">more</a>
+					<a @click.prevent="btn2" v-cloak class="btn btn-section5" href="#">{{ btnText2 }}</a>
 				</div>
 				<div class="section5-content">
 					<img src="img/s-9.png" alt="">
 					<div class="section5-textBox">
 						<h3 class="section5-heading">それをカムパネルラが</h3>
-						<p class="section5-text">忘れる筈はずもなかったのに、すぐに返事をしなかったのは、このごろぼくが、朝にも午后にも仕事がつらく、学校に出てももうみんなともはきはき遊ばず、カムパネルラともあんまり物を云わないようになったので、</p>
+						<p class="section5-text">忘れる筈はずもなかったのに、すぐに返事をしなかったのは、このごろぼくが、朝にも午后にも仕事がつらく、学校に出てももうみんなともはきはき遊ばず、カムパネルラともあんまり物を云わないようになったので<span v-if="!moreText3">……</span><span v-if="moreText3">、そしてその天の川の水のなかから四方を見ると、ちょうど水が深いほど青く見えるように、天の川の底の深く遠いところほど星がたくさん集って見えしたがって白くぼんやり見えるのです。</span></p>
 					</div>
-					<a class="btn btn-section5" href="#">more</a>
+					<a @click.prevent="btn3" v-cloak class="btn btn-section5" href="#">{{ btnText3 }}</a>
 				</div>
 			</div>
 		</section>
@@ -120,5 +122,7 @@
 				</div>
 			</div>
 		</footer>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+		<script src="vue.js"></script>
 	</body>
 </html>
