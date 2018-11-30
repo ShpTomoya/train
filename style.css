@@ -62,7 +62,7 @@ h1, h2, h3, p {
 header {
 	width: 100%;
 	padding: 12% 0 18%;
-	background-image: url('img/top.png');
+	background-image: url('img/top.jpg');
 	background-size: cover;
 	color: #FFF;
 }
@@ -193,7 +193,7 @@ header {
 .section3 {
 	width: 100%;
 	padding: 8% 0;
-	background-image: url('img/s-4.png');
+	background-image: url('img/s-4.jpg');
 	background-size: cover;
 	color: #FFF;
 }
