@@ -1,10 +1,36 @@
-// header-start
+// イベントバスを作成
+var bus = new Vue();
+
+/* * *
+header-start
+* * */
+// トリガーのVueインスタンス
 new Vue({
 	el: '#start',
 	methods: {
-		sayStart: function() {
-			alert('Let\'s get started!!');
+		openModal: function () {
+			// 独自イベントclick.trigerを発火
+			bus.$emit('click.trigger');
 		}
+	}
+})
+// モーダルのインスタンス
+new Vue({
+	el: '#modal',
+	data: {
+		opened: false
+	},
+	methods: {
+		open: function () {
+			this.opened = true;
+		},
+		close: function () {
+			this.opened = false;
+		}
+	},
+	// データ、算出プロパティ、メソッドが準備できたら実行
+	created: function () {
+		bus.$on('click.trigger', this.open);
 	}
 })
 
@@ -18,11 +44,11 @@ new Vue({
 		btnMore2: true
 	},
 	methods: {
-		showText1: function() {
+		showText1: function () {
 			this.moreText1 = true;
 			this.btnMore1 = false;
 		},
-		showText2: function() {
+		showText2: function () {
 			this.moreText2 = true;
 			this.btnMore2 = false;
 		}
@@ -38,24 +64,24 @@ new Vue({
 		moreText3: false
 	},
 	computed: {
-		btnText1: function() {
+		btnText1: function () {
 			return this.moreText1 ? 'less' : 'more';
 		},
-		btnText2: function() {
+		btnText2: function () {
 			return this.moreText2 ? 'less' : 'more';
 		},
-		btnText3: function() {
+		btnText3: function () {
 			return this.moreText3 ? 'less' : 'more';
 		}
 	},
 	methods: {
-		btn1: function() {
+		btn1: function () {
 			this.moreText1 = !this.moreText1;
 		},
-		btn2: function() {
+		btn2: function () {
 			this.moreText2 = !this.moreText2;
 		},
-		btn3: function() {
+		btn3: function () {
 			this.moreText3 = !this.moreText3;
 		}
 	}
