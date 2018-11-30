@@ -55,7 +55,7 @@ h1, h2, h3, p {
 	font-weight: bold;
 	letter-spacing: 1.5px;
 	font-size: 18px;
-  line-height: 1.5;
+	line-height: 1.5;
 }
 
 /* header */
@@ -74,6 +74,47 @@ header {
 .btn-header {
 	color: #FFF;
 	margin-top: 30px;
+}
+
+/* modal */
+.trigger > p {
+	margin: 0;
+	position: absolute; top: 50%; left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	font: bold 40px/1 sans-serif;
+	opacity: .1;
+	width: 600px;
+}
+
+.modal {
+	position: fixed; top: 0; left: 0;
+	width: 100%; height: 100%;
+	z-index: 10;
+	background: rgba(0, 0, 0, .7);
+	transform: translate3d(0, 0, 0);
+}
+
+.modal-close {
+	position: absolute; top: 4px; right: 16px;
+	color: #fff;
+	cursor: pointer;
+	font: bold 40px sans-serif;
+	line-height: 1;
+}
+.modal-content {
+	position: absolute; top: 50%; left: 50%;
+	transform: translate(-50%, -50%);
+}
+.modal-content > p {
+	margin: 0;
+	width: 400px;
+	vertical-align: middle;
+	text-align: center;
+	font: bold 12px/100px sans-serif;
+	letter-spacing: .1em;
+	color: #aaa;
+	background: #fff;
 }
 
 /* section1 */
