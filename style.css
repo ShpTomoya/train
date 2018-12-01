@@ -86,13 +86,36 @@ header {
 	opacity: .1;
 	width: 600px;
 }
-
 .modal {
 	position: fixed; top: 0; left: 0;
 	width: 100%; height: 100%;
 	z-index: 10;
 	background: rgba(0, 0, 0, .7);
 	transform: translate3d(0, 0, 0);
+}
+/* 往路のアニメーション全体に対して設定をするためのクラス */
+.modal-enter-active {
+	transition: opacity .4s;
+}
+/* 往路の開始状態を設定するためのクラス */
+.modal-enter {
+	opacity: 0;
+}
+/* 往路の終了状態を設定するためのクラス */
+.modal-enter-to {
+	opacity: 1;
+}
+/* 復路のアニメーション全体に対して設定をするためのクラス */
+.modal-leave-active {
+	transition: opacity 1.2s;
+}
+/* 復路の開始状態を設定するためのクラス */
+.modal-leave {
+	opacity: 1;
+}
+/* 復路の終了状態を設定するためのクラス */
+.modal-leave-to {
+	opacity: 0;
 }
 
 .modal-close {
@@ -171,7 +194,7 @@ header {
 	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
 }
 .section2-icon {
-		display: inline-block;
+	display: inline-block;
 }
 .section2-heading {
 	position: relative;
@@ -181,12 +204,12 @@ header {
 	letter-spacing: 1.5px;
 }
 .section2-heading::after {
-  content: '';
-  position: absolute;
-  right: 40%;
-  bottom: 0;
-  left: 40%;
-  border-bottom: 3px solid;
+	content: '';
+	position: absolute;
+	right: 40%;
+	bottom: 0;
+	left: 40%;
+	border-bottom: 3px solid;
 }
 
 /* section3 */
@@ -273,12 +296,12 @@ header {
 	font-size: 15px;
 }
 .section5-heading::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  border-bottom: 2px solid #013B74;
+	content: '';
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	border-bottom: 2px solid #013B74;
 }
 .section5-text {
 	line-height: 1.6;
