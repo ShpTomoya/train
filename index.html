@@ -15,12 +15,14 @@
 			<h1 class="header-title">The Night<br>of the<br>Milky Way Train</h1>
 			<a id="start" @click.prevent="openModal" class="btn btn-header" href="#">start</a>
 			<div id="modal">
-				<div class="modal" v-show="opened" @click.self="close">
-					<div class="modal-close" @click="close">×</div>
-					<div class="modal-content">
-						<p>Click here and check nothing happnes</p>
+				<transition name="modal">
+					<div class="modal" v-show="opened" @click.self="close">
+						<div class="modal-close" @click="close">×</div>
+						<div class="modal-content">
+							<p>Click here and check nothing happnes</p>
+						</div>
 					</div>
-				</div>
+				</transition>
 			</div>
 		</div>
 	</header>
