@@ -19,7 +19,9 @@
 					<div class="modal" v-show="opened" @click.self="close">
 						<div class="modal-close" @click="close">×</div>
 						<div class="modal-content">
-							<p>Click here and check nothing happnes</p>
+							<!-- カスタムディレクティブv-playingを利用し、videoタグに対して -->
+							<!-- モーダルインスタンスのopenedデータ変更と連動して処理を実行 -->
+							<video src="https://goo.gl/qHXCm4" controls width="300" height="168" v-playing="opened"></video>
 						</div>
 					</div>
 				</transition>
