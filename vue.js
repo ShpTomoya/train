@@ -4,6 +4,11 @@ var bus = new Vue();
 /* * *
 header-start
 * * */
+// v-playingという名前のカスタムディレクティブを定義
+Vue.directive('playing', function (el, binding) {
+	// ディレクティブの値に応じて要素のplay/pauseメソッドを実行する
+	el[binding.value ? 'play' : 'pause']();
+});
 // トリガーのVueインスタンス
 new Vue({
 	el: '#start',
